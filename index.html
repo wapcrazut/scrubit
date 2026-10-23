@@ -51,8 +51,42 @@
     <button type="button" id="zipBtn">Download all as .zip</button>
   </div>
 
+  <section class="faq" aria-labelledby="faqTitle">
+    <h2 id="faqTitle">FAQ</h2>
+
+    <details>
+      <summary>Are my photos uploaded anywhere?</summary>
+      <p>No. Your photos are processed right here in this tab, so they never leave your device.</p>
+    </details>
+
+    <details>
+      <summary>What gets removed?</summary>
+      <p>Location (GPS), camera make and model, serial numbers, the date and time the photo was taken, the editing software used, and any descriptions, author names, or other notes attached to the file. Every photo is rebuilt as a fresh copy, so removal doesn't depend on the page recognizing each item.</p>
+    </details>
+
+    <details>
+      <summary>Will the photo look different or lose quality?</summary>
+      <p>It will look the same, but it's saved as a new copy rather than an exact duplicate. Photos saved as JPEG or WebP are compressed a second time, so use the quality slider if that matters. Colors can shift slightly on some photos, and converting a transparent PNG to JPEG loses the transparency.</p>
+    </details>
+
+    <details>
+      <summary>How can I check it worked?</summary>
+      <p>Turn on "Show removed data" to see exactly what was stripped. To double-check, you can also open the downloaded file in a free metadata viewer tool.</p>
+    </details>
+
+    <details>
+      <summary>Why does a card say "metadata check unavailable"?</summary>
+      <p>Before cleaning, the page lists what it found hidden in your photo. For some unusual files it can't read that list. The photo is still cleaned either way, and the page tells you the check failed instead of claiming the file was clean.</p>
+    </details>
+
+    <details>
+      <summary>Which formats work, and is there a size limit?</summary>
+      <p>JPEG, PNG, and WebP, one or many at a time, with a .zip download for batches. Other file types are ignored. Very large photos may fail to process on older phones or computers.</p>
+    </details>
+  </section>
+
   <footer>
-    <strong>How this works:</strong> each image is redrawn onto a blank canvas in your browser, which produces a copy that looks the same with no metadata attached: EXIF, GPS, camera make/model, timestamps, and embedded text fields are all dropped in the process. Files are never transmitted to a server; everything above runs locally in this tab.
+    <strong>How this works:</strong> each photo is redrawn as a fresh copy in your browser, which looks the same but carries none of the hidden data. Everything runs locally in this tab.
   </footer>
 
 </div>

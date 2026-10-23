@@ -364,8 +364,62 @@
 
   .zip-row button:hover{ background: var(--ink); color: var(--paper); }
 
-  footer{
+  .faq{
     margin-top: 44px;
+  }
+
+  .faq h2{
+    margin: 0 0 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .faq details{
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq details:last-of-type{ border-bottom: 0; }
+
+  .faq summary{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq summary::-webkit-details-marker{ display: none; }
+
+  .faq summary::before{
+    content: '+';
+    flex: none;
+    width: 1ch;
+    font-family: var(--mono);
+    color: var(--ink-soft);
+  }
+
+  .faq details[open] summary::before{ content: '\2212'; }
+
+  .faq summary:hover{ color: var(--safe); }
+
+  .faq details p{
+    margin: 0 0 14px;
+    padding-left: calc(1ch + 10px);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  footer{
+    margin-top: 28px;
     padding-top: 18px;
     border-top: 1px solid var(--line);
     font-size: 12.5px;
