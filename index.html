@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrubit: remove hidden metadata from photos</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Scrubit<span class="dot">.</span></h1>
+    <p>Strip GPS coordinates, camera details, and other hidden data out of your photos before you post them. Processing happens on your device, so nothing is uploaded anywhere.</p>
+  </header>
+
+  <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose or drop images to scrub">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M12 3v12m0-12l-4 4m4-4l4 4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/>
+    </svg>
+    <p>Drop images here</p>
+    <div class="hint">JPEG, PNG, or WebP. Nothing leaves this tab.</div>
+    <button type="button" id="chooseBtn">Choose files</button>
+    <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple>
+  </div>
+
+  <div class="card options">
+    <div class="field">
+      <label for="formatSelect">Output</label>
+      <select id="formatSelect">
+        <option value="original">Keep original format</option>
+        <option value="image/jpeg">Convert to JPEG</option>
+        <option value="image/png">Convert to PNG</option>
+        <option value="image/webp">Convert to WebP</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="qualitySlider">Quality</label>
+      <input type="range" id="qualitySlider" min="40" max="100" value="92">
+      <span class="quality-value" id="qualityValue">92%</span>
+    </div>
+    <div class="field">
+      <input type="checkbox" id="revealToggle">
+      <label for="revealToggle">Show removed data</label>
+    </div>
+  </div>
+
+  <div class="filelist" id="fileList"></div>
+
+  <div class="zip-row" id="zipRow">
+    <button type="button" id="zipBtn">Download all as .zip</button>
+  </div>
+
+  <footer>
+    <strong>How this works:</strong> each image is redrawn onto a blank canvas in your browser, which produces a copy that looks the same with no metadata attached: EXIF, GPS, camera make/model, timestamps, and embedded text fields are all dropped in the process. Files are never transmitted to a server; everything above runs locally in this tab.
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"
+        integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="script.js"></script>
+</body>
+</html>
